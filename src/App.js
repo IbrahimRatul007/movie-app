@@ -50,8 +50,9 @@ const Card = ({
   return (
     <div
       style={{
+        padding: "10px 0px",
         border: "solid 2px black",
-        width: "200px",
+        width: "250px",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
