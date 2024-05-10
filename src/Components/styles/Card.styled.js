@@ -39,7 +39,7 @@ export const StyledCard = styled.div`
     width: 100%;
     height: 100%;
     transition: all 0.7s ease-in-out;
-    padding: 20px;
+    padding: 10px;
     box-sizing: border-box;
     clip-path: circle(0% at 100% 100%);
   }
@@ -71,6 +71,7 @@ export const StyledCard = styled.div`
   .card button {
     width: fit-content;
     height: 40px;
+    margin-right: 5px;
     cursor: pointer;
     border-style: none;
     background-color: #ff3838;
@@ -82,6 +83,6 @@ export const StyledCard = styled.div`
   }
   .card button:hover {
     transform: scale(0.95) translateX(-5px);
-    transition: all 0.5s ease-in-out;
+    transition: all 0.25s ease-in-out;
   }
 `;
