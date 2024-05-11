@@ -18,6 +18,7 @@ const Card = ({ movie, setWatchedList, setWishedList }) => {
   }
   function cardSelectHandler() {
     console.log(movie.title);
+    //can create an object of the clicked card
   }
 
   return (

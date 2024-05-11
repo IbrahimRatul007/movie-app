@@ -24,11 +24,6 @@ export const StyledCard = styled.div`
     filter: blur(3px);
     z-index: 0;
   }
-
-  &:hover div {
-    transform: translateY(0);
-    z-index: 1;
-  }
 `;
 export const CardImage = styled.img`
   position: relative;
@@ -55,7 +50,11 @@ export const CardInfo = styled.div`
   overflow: hidden;
   z-index: 0;
   background-color: rgba(255, 255, 255, 0.8);
-  transition: transform 0.5 ease;
+  transition: all 1 ease;
+  &:hover {
+    transform: translateY(0);
+    z-index: 1;
+  }
 `;
 
 export const Title = styled.h2`

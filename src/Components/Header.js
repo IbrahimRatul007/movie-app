@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import { StyledHeader } from "./styles/Header.styled";
 const Header = () => {
   return (

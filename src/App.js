@@ -3,7 +3,8 @@ import "./App.css";
 import movies from "./Data/movies.json";
 import Header from "./Components/Header";
 import Card from "./Components/Card";
-import Sidebar from "./Components/UI/Sidebar";
+// import Sidebar from "./Components/UI/Sidebar";
+// const [sideBarOpen, setSideBarOpen] = useState(true);
 
 function App() {
   const [watchedList, setWatchedList] = useState([]);
@@ -13,7 +14,8 @@ function App() {
     <div className="App">
       <Header />
       <div>
-        <Sidebar />
+        {/* (sideBarOpen &&{" "} */}
+        {/* <Sidebar sideBarOpen={sideBarOpen} setSideBarOpen={setSideBarOpen} />) */}
         <ul
           style={{
             display: "grid",
