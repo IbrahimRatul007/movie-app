@@ -1,4 +1,9 @@
-import { StyledCard } from "./styles/Card.styled";
+import {
+  Wrapper,
+  StyledCard,
+  StyledImage,
+  StyledDescription,
+} from "./styles/Card.styled";
 import { StyledCardItem } from "./styles/CardItem.styled";
 
 const Card = ({ movie, setWatchedList, setWishedList }) => {
@@ -11,17 +16,17 @@ const Card = ({ movie, setWatchedList, setWishedList }) => {
   }
 
   return (
-    <StyledCard className="wrapper">
-      <div className="card">
-        <img src={movie.image} />
-        <div className="descriptions">
-          <h3>{movie.title}</h3>
+    <Wrapper>
+      <StyledCard>
+        <StyledImage src={movie.image} />
+        <StyledDescription>
+          <h1>{movie.title}</h1>
           <p>{movie.description}</p>
           <button onClick={addWatchedHandler}>Watched</button>
           <button onClick={addWishedHandler}>Watchlist</button>
-        </div>
-      </div>
-    </StyledCard>
+        </StyledDescription>
+      </StyledCard>
+    </Wrapper>
   );
 };
 
