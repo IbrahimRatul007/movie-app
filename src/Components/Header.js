@@ -5,6 +5,10 @@ const Header = () => {
       <h1>
         Top 100 <span>Movies</span>
       </h1>
+      <div>
+        <a href="#">Watched Movies</a>
+        <a href="#">Want To Watch</a>
+      </div>
     </StyledHeader>
   );
 };
