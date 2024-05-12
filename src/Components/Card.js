@@ -1,5 +1,4 @@
 import {
-  Wrapper,
   StyledCard,
   CardImage,
   CardInfo,
@@ -8,7 +7,7 @@ import {
   Buttons,
 } from "./styles/Card.styled";
 
-const Card = ({ movie, setWatchedList, setWishedList }) => {
+const Card = ({ movies, movie, setWatchedList, setWishedList }) => {
   function addWatchedHandler() {
     setWatchedList((prev) => [...prev, movie.title]);
   }
@@ -16,25 +15,21 @@ const Card = ({ movie, setWatchedList, setWishedList }) => {
   function addWishedHandler() {
     setWishedList((prev) => [...prev, movie.title]);
   }
-  function cardSelectHandler() {
-    console.log(movie.title);
-    //can create an object of the clicked card
-  }
 
   return (
-    <Wrapper>
-      <StyledCard onClick={cardSelectHandler}>
-        <CardImage src={movie.image} />
-        <CardInfo>
-          <Title>{movie.title}</Title>
-          <P>{movie.description}</P>
-          <Buttons>
-            <button onClick={addWatchedHandler}>Watched</button>
-            <button onClick={addWishedHandler}>Watchlist</button>
-          </Buttons>
-        </CardInfo>
-      </StyledCard>
-    </Wrapper>
+    // <Wrapper>
+    <StyledCard>
+      <CardImage src={movie.image} />
+      <CardInfo>
+        <Title>{movie.title}</Title>
+        <P>{movie.description}</P>
+        <Buttons>
+          <button onClick={addWatchedHandler}>Watched</button>
+          <button onClick={addWishedHandler}>Watchlist</button>
+        </Buttons>
+      </CardInfo>
+    </StyledCard>
+    // </Wrapper>
   );
 };
 

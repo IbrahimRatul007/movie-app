@@ -1,22 +1,21 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.div`
-  width: 100%;
-  max-width: 650px;
-  height: auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-
-  /* background-color: green; */
-`;
+// export const Wrapper = styled.div`
+//   max-width: 500px;
+//   height: auto;
+//   display: flex;
+//   flex-wrap: wrap;
+//   justify-content: space-around;
+//   border: solid 2px green;
+//   margin: 2px;
+// `;
 
 export const StyledCard = styled.div`
   position: relative;
   justify-content: center;
   align-items: center;
-  height: 500px;
-  width: 350px;
+  height: 300px;
+  width: 200px;
   margin-bottom: 10px;
   cursor: pointer;
 
@@ -27,6 +26,7 @@ export const StyledCard = styled.div`
 `;
 export const CardImage = styled.img`
   position: relative;
+  border-radius: 10px;
   width: 100%;
   height: 100%;
   border: solid 2px white;
@@ -36,6 +36,7 @@ export const CardImage = styled.img`
 export const CardInfo = styled.div`
   padding: 20px;
   box-sizing: border-box;
+  border-radius: 10px;
   position: absolute;
   width: 100%;
   height: 100%;
@@ -57,7 +58,7 @@ export const CardInfo = styled.div`
   }
 `;
 
-export const Title = styled.h2`
+export const Title = styled.h5`
   color: rgb(245, 66, 108);
   letter-spacing: 1px;
   margin: 0px;
