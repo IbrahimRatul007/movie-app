@@ -7,13 +7,26 @@ import {
   Buttons,
 } from "./styles/Card.styled";
 
-const Card = ({ movies, movie, setWatchedList, setWishedList }) => {
+const Card = ({
+  movies,
+  movie,
+  setWatchedList,
+  setWishedList,
+  watchedList,
+  wishedList,
+}) => {
   function addWatchedHandler() {
-    setWatchedList((prev) => [...prev, movie.title]);
+    if (watchedList.map((movie) => movie.title).includes(movie.title)) {
+      return;
+    }
+    setWatchedList((prev) => [...prev, movie]);
   }
 
   function addWishedHandler() {
-    setWishedList((prev) => [...prev, movie.title]);
+    if (wishedList.map((movie) => movie.title).includes(movie.title)) {
+      return;
+    }
+    setWishedList((prev) => [...prev, movie]);
   }
 
   return (
