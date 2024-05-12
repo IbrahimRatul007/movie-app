@@ -4,6 +4,7 @@ import movies from "./Data/movies.json";
 import Header from "./Components/Header";
 import Card from "./Components/Card";
 import WishedList from "./Components/WishedList";
+import WatchedList from "./Components/WatchedList";
 // import Sidebar from "./Components/UI/Sidebar";
 // const [sideBarOpen, setSideBarOpen] = useState(true);
 
@@ -46,6 +47,7 @@ function App() {
         </div>
         <WishedList wishedList={wishedList} />
       </div>
+      <WatchedList watchedList={watchedList} />
     </div>
   );
 }
