@@ -36,7 +36,9 @@ const WatchedList = ({ watchedList }) => {
                 alt="movie poster"
                 style={{ height: "70px", width: "50px", marginRight: "15px" }}
               />{" "}
-              {movie.title}
+              <p style={{ fontSize: "20px", fontWeight: "bold" }}>
+                {movie.title}
+              </p>
             </div>
           </li>
         ))}
