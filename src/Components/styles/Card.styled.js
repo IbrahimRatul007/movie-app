@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StyledCard = styled.div`
+export const Wrapper = styled.div`
   .wrapper {
     position: absolute;
     top: 50%;
