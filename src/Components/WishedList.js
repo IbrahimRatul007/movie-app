@@ -1,6 +1,5 @@
 import React from "react";
 import VisibilityIcon from "@mui/icons-material/Visibility";
-import WatchedList from "./WatchedList";
 
 const WishedList = ({
   wishedList,
@@ -9,7 +8,7 @@ const WishedList = ({
   watchedList,
 }) => {
   function deleteHandler(title) {
-    const filteredList = wishedList.filter((movie) => movie.title != title);
+    const filteredList = wishedList.filter((movie) => movie.title !== title);
     setWishedList(filteredList);
   }
   function addWatchedHandler(movie) {
@@ -32,12 +31,19 @@ const WishedList = ({
         // background: "black",
       }}
     >
-      <h2 style={{ color: "rgb(245, 66, 108)" }}>WishedList</h2>
+      <h2 style={{ color: "rgb(245, 66, 108)", fontSize: "50px" }}>
+        Watch Later
+      </h2>
       <ul>
         {wishedList.map((movie) => (
           <li
             key={movie.rank}
-            style={{ color: "white", padding: "0", listStyle: "none" }}
+            style={{
+              color: "white",
+              padding: "0",
+              listStyle: "none",
+              textShadow: "#fc0 1px 0 10px",
+            }}
           >
             <div
               style={{
@@ -53,7 +59,7 @@ const WishedList = ({
                 alt="movie poster"
                 style={{ height: "70px", width: "50px", marginRight: "15px" }}
               />{" "}
-              <p style={{ fontSize: "20px", fontWeight: "bold" }}>
+              <p style={{ fontSize: "25px", fontWeight: "bold" }}>
                 {movie.title}
               </p>
               <div
@@ -78,7 +84,10 @@ const WishedList = ({
                 </button>
                 <VisibilityIcon
                   onClick={() => addWatchedHandler(movie)}
-                  style={{ color: "White", marginRight: "5px" }}
+                  style={{
+                    color: "White",
+                    marginRight: "5px",
+                  }}
                 />
               </div>
             </div>

@@ -12,11 +12,15 @@ export const StyledHeader = styled.div`
   justify-content: space-between;
   align-items: center;
   & h1 {
-    background-color: rgb(245, 66, 108);
-    width: 300px;
+    // background-color: rgb(245, 66, 108);
+    width: 1000;
     border-radius: 20px;
-    color: #202020;
+    color: white;
+    font-size: 150px;
+    // margin: auto;
+    transform: translate(50%);
     cursor: pointer;
+    text-shadow: #fc0 1px 0 10px;
   }
   & span {
     background-color: #202020;

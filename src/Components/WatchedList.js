@@ -2,7 +2,7 @@ import React from "react";
 
 const WatchedList = ({ watchedList, setWatchedList }) => {
   function delteHandler(title) {
-    const filteredList = watchedList.filter((movie) => movie.title != title);
+    const filteredList = watchedList.filter((movie) => movie.title !== title);
     setWatchedList(filteredList);
   }
   return (
@@ -20,12 +20,20 @@ const WatchedList = ({ watchedList, setWatchedList }) => {
         // background: "black",
       }}
     >
-      <h2 style={{ color: "rgb(245, 66, 108)" }}>Watched Movies</h2>;
+      <h2 style={{ color: "rgb(245, 66, 108)", fontSize: "50px" }}>
+        Watched Movies
+      </h2>
+      ;
       <ul>
         {watchedList.map((movie) => (
           <li
             key={movie.rank}
-            style={{ color: "white", padding: "0", listStyle: "none" }}
+            style={{
+              color: "white",
+              padding: "0",
+              listStyle: "none",
+              textShadow: "#fc0 1px 0 10px",
+            }}
           >
             <div
               style={{
@@ -40,7 +48,7 @@ const WatchedList = ({ watchedList, setWatchedList }) => {
                 alt="movie poster"
                 style={{ height: "70px", width: "50px", marginRight: "15px" }}
               />{" "}
-              <p style={{ fontSize: "20px", fontWeight: "bold" }}>
+              <p style={{ fontSize: "25px", fontWeight: "bold" }}>
                 {movie.title}
               </p>
               <button
@@ -51,6 +59,7 @@ const WatchedList = ({ watchedList, setWatchedList }) => {
                   justifyContent: "center",
                   marginLeft: "auto",
                   color: "white",
+                  marginRight: "5px",
                 }}
               >
                 x
