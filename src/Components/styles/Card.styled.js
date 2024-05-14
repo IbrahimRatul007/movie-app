@@ -58,7 +58,7 @@ export const CardInfo = styled.div`
   }
 `;
 
-export const Title = styled.h5`
+export const Title = styled.h4`
   color: rgb(245, 66, 108);
   letter-spacing: 1px;
   margin: 0px;

@@ -1,6 +1,10 @@
 import React from "react";
 
-const WatchedList = ({ watchedList }) => {
+const WatchedList = ({ watchedList, setWatchedList }) => {
+  function delteHandler(title) {
+    const filteredList = watchedList.filter((movie) => movie.title != title);
+    setWatchedList(filteredList);
+  }
   return (
     <div
       style={{
@@ -39,6 +43,18 @@ const WatchedList = ({ watchedList }) => {
               <p style={{ fontSize: "20px", fontWeight: "bold" }}>
                 {movie.title}
               </p>
+              <button
+                onClick={() => delteHandler(movie.title)}
+                style={{
+                  width: "5px",
+                  display: "flex",
+                  justifyContent: "center",
+                  marginLeft: "auto",
+                  color: "white",
+                }}
+              >
+                x
+              </button>
             </div>
           </li>
         ))}

@@ -5,8 +5,6 @@ import Header from "./Components/Header";
 import Card from "./Components/Card";
 import WishedList from "./Components/WishedList";
 import WatchedList from "./Components/WatchedList";
-// import Sidebar from "./Components/UI/Sidebar";
-// const [sideBarOpen, setSideBarOpen] = useState(true);
 
 function App() {
   const [watchedList, setWatchedList] = useState([]);
@@ -45,9 +43,14 @@ function App() {
             )}
           </div>
         </div>
-        <WishedList wishedList={wishedList} />
+        <WishedList
+          wishedList={wishedList}
+          setWishedList={setWishedList}
+          watchedList={watchedList}
+          setWatchedList={setWatchedList}
+        />
       </div>
-      <WatchedList watchedList={watchedList} />
+      <WatchedList watchedList={watchedList} setWatchedList={setWatchedList} />
     </div>
   );
 }

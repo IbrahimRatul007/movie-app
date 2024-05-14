@@ -34,7 +34,9 @@ const Card = ({
     <StyledCard>
       <CardImage src={movie.image} />
       <CardInfo>
-        <Title>{movie.title}</Title>
+        <Title>
+          {movie.title} <span>({movie.year})</span>
+        </Title>
         <P>{movie.description}</P>
         <Buttons>
           <button onClick={addWatchedHandler}>Watched</button>
