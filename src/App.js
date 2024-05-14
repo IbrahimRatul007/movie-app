@@ -1,30 +1,56 @@
 import { useState } from "react";
+import "./App.css";
 import movies from "./Data/movies.json";
 import Header from "./Components/Header";
 import Card from "./Components/Card";
+import WishedList from "./Components/WishedList";
+import WatchedList from "./Components/WatchedList";
 
 function App() {
   const [watchedList, setWatchedList] = useState([]);
   const [wishedList, setWishedList] = useState([]);
-  console.log(watchedList);
-  console.log(wishedList);
+  const [visible, setVisible] = useState(8);
+
+  function handleIncreaseVisibility() {
+    setVisible((prev) => prev + 8);
+  }
+  function handleReduceVisibility() {
+    setVisible(8);
+  }
+
   return (
     <div className="App">
       <Header />
-      <ul
-        style={{ display: "grid", gridTemplateColumns: "20% 20% 20% 20% 20%" }}
-      >
-        {movies.map((movie) => (
-          <Card
-            movie={movie}
-            key={movie.id}
-            watchedList={watchedList}
-            wishedList={wishedList}
-            setWatchedList={setWatchedList}
-            setWishedList={setWishedList}
-          />
-        ))}
-      </ul>
+      <div className="hero">
+        <div className="card-container">
+          {movies.slice(0, visible).map((movie) => (
+            <Card
+              movies={movies}
+              movie={movie}
+              key={movie.id}
+              watchedList={watchedList}
+              wishedList={wishedList}
+              setWatchedList={setWatchedList}
+              setWishedList={setWishedList}
+            />
+          ))}
+          <div className="container-buttons">
+            {visible < 100 && (
+              <button onClick={handleIncreaseVisibility}>See More</button>
+            )}
+            {visible > 8 && (
+              <button onClick={handleReduceVisibility}>Collapse</button>
+            )}
+          </div>
+        </div>
+        <WishedList
+          wishedList={wishedList}
+          setWishedList={setWishedList}
+          watchedList={watchedList}
+          setWatchedList={setWatchedList}
+        />
+      </div>
+      <WatchedList watchedList={watchedList} setWatchedList={setWatchedList} />
     </div>
   );
 }

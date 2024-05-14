@@ -1,27 +1,51 @@
-import { StyledCard, Wrapper } from "./styles/Card.styled";
-import { StyledCardItem } from "./styles/CardItem.styled";
+import {
+  StyledCard,
+  Wrapper,
+  CardImage,
+  CardInfo,
+  Title,
+  P,
+  Buttons,
+} from "./styles/Card.styled";
 
-const Card = ({ movie, setWatchedList, setWishedList }) => {
+const Card = ({
+  movies,
+  movie,
+  setWatchedList,
+  setWishedList,
+  watchedList,
+  wishedList,
+}) => {
   function addWatchedHandler() {
-    setWatchedList((prev) => [...prev, movie.title]);
+    if (watchedList.map((movie) => movie.title).includes(movie.title)) {
+      return;
+    }
+    setWatchedList((prev) => [...prev, movie]);
   }
 
   function addWishedHandler() {
-    setWishedList((prev) => [...prev, movie.title]);
+    if (wishedList.map((movie) => movie.title).includes(movie.title)) {
+      return;
+    }
+    setWishedList((prev) => [...prev, movie]);
   }
 
   return (
-    <Wrapper className="wrapper">
-      <div className="card">
-        <img src={movie.image} />
-        <div className="descriptions">
-          <h3>{movie.title}</h3>
-          <p>{movie.description}</p>
+    // <Wrapper>
+    <StyledCard>
+      <CardImage src={movie.image} />
+      <CardInfo>
+        <Title>
+          {movie.title} <span>({movie.year})</span>
+        </Title>
+        <P>{movie.description}</P>
+        <Buttons>
           <button onClick={addWatchedHandler}>Watched</button>
           <button onClick={addWishedHandler}>Watchlist</button>
-        </div>
-      </div>
-    </Wrapper>
+        </Buttons>
+      </CardInfo>
+    </StyledCard>
+    // </Wrapper>
   );
 };
 
